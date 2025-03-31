@@ -19,49 +19,11 @@ const productModel = new mongoose.Schema({
         required: [true, 'Please select category for this product'],
         enum: {
             values: [
-                "Classic",
-                'Dive',
-                'Pilot',
-                'Field',
-                'Dress',
-                'Chronograph',
-                'Moon Phase',
-                'Vintage'
+                "Bracelet",
+                'Necklace',
+                'Keychain',
             ],
             message: 'Please select correct category for product'
-        }
-    },
-
-    movement: {
-        type: String,
-        required: [true, 'Please select movement for this product'],
-        enum: {
-            values: [
-                "Mechanical",
-                'Automatic',
-                'Quartz',
-                'Solar',
-                'Kinetic'
-            ],
-            message: 'Please select movement type for product'
-        }
-    },
-
-    brand: {
-        type: String,
-        required: [true, 'Please select brand for this product'],
-        enum: {
-            values: [
-                "Seiko",
-                'Citizen',
-                'Rolex',
-                'Omega',
-                'Cartier',
-                'Breitling',
-                'Tudor',
-                'Grand Seiko',
-            ],
-            message: 'Please select brand type for product'
         }
     },
 
