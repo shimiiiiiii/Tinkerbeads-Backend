@@ -7,6 +7,8 @@ const {
     saveToken,
     register,
     login,
+    getProfile,
+    updateProfile,
 } = require('../controllers/user');
 
 router.post('/register', upload.array('images'), register)
@@ -14,6 +16,11 @@ router.post('/register', upload.array('images'), register)
 router.post('/login', login)
 
 router.post('/save/token', isAuthenticatedV2, saveToken)
+
+
+router.get('/profile', isAuthenticated, getProfile);
+
+router.put('/profile/update', upload.array('images'), isAuthenticated, updateProfile);
 
 
 

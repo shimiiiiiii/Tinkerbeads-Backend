@@ -123,7 +123,13 @@ const userModel = new mongoose.Schema({
         type: String,
         default: 'user'
     },
-})
+
+    memberSince: {
+        type: Date,
+        default: Date.now,
+    },
+}, { timestamps: true });
+
 
 // HASH NG PASSWORD
 userModel.pre('save', async function (next) {
